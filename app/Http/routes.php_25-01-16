@@ -1,0 +1,40 @@
+<?php
+
+/*
+|--------------------------------------------------------------------------
+| Application Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register all of the routes for an application.
+| It's a breeze. Simply tell Laravel the URIs it should respond to
+| and give it the controller to call when that URI is requested.
+|
+*/
+
+Route::get('/', 'Auth\AuthController@getLogin');
+
+
+Route::get('home', 'HomeController@index');
+
+Route::get('country', 'CountriesController@index');
+Route::get('country/create', 'CountriesController@create');
+Route::get('country/{id}', 'CountriesController@show');
+Route::post('country','CountriesController@store');
+Route::delete('country/{id}',array('as' => 'country', 'uses' => 'CountriesController@destroy'));
+Route::get('country/{id}/edit','CountriesController@edit');
+Route::patch('country/{id}/update','CountriesController@update');
+
+Route::get('state', 'StatesController@index');
+Route::get('state/create', 'StatesController@create');
+Route::get('state/{id}', 'StatesController@show');
+Route::post('state','StatesController@store');
+Route::delete('state/{id}',array('as' => 'state', 'uses' => 'StatesController@destroy'));
+Route::get('state/{id}/edit','StatesController@edit');
+Route::patch('state/{id}/update','StatesController@update');
+
+Route::controllers([
+	'auth' => 'Auth\AuthController',
+	'password' => 'Auth\PasswordController',
+]);
+
+

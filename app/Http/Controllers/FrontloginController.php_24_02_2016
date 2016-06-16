@@ -1,0 +1,38 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+use App\Models\Front_login;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
+
+class FrontloginController extends Controller {
+
+    public function __construct() {
+       // $this->middleware('auth');
+    }
+
+    public function index() {
+        return view('frontlogin.index');
+    }
+    public function signup() {
+        return view('frontlogin.signup');
+    }
+    public function forgot_password() {
+        return view('frontlogin.forgot_password');
+    }
+    public function registration(Request $request) {
+        $this->validate($request, [
+            'fname' => 'required',
+            'lname' => 'required'
+        ]);
+
+        $input = $request->all();
+        //dd($input);
+        Login::create($input);
+        return redirect('login');
+        
+    }
+}
