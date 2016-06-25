@@ -18,6 +18,10 @@ class LoginController extends Controller {
     }
 
     public function index() {
+        if(session('user_email'))
+        {
+            return redirect('user/myaccount');
+        }  
         return view('frontlogin.index');
     }
 
