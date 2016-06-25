@@ -38,7 +38,7 @@
 <div class="h_top">
   <div class="wraper">
     <div class="row">
-      <div class="col-4 logo_p"><img src="{{ asset('front/images/logo.png') }}" / alt="My Travel Desk">
+        <div class="col-4 logo_p"><a href="{{url('/home')}}"><img src="{{ asset('front/images/logo.png') }}"  alt="My Travel Desk"></a>
       <span class="toggle_menu"><i class="fa fa-navicon"></i></span>
       </div>
       <div class="col-8 tar">
