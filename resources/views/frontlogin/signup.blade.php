@@ -14,7 +14,7 @@
         </div>
         @endif
         
-        {!! Form::open(array('url' => 'login')) !!}
+        {!! Form::open(array('url' => 'signup')) !!}
     	<div class="col-5 col-bdr-right">
         	<h4>Create Your MyTravelDesk Account</h4>
             <p class="separator">Enter the email address associated with Yatra.com and click <strong>Submit</strong></p>

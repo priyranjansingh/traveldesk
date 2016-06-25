@@ -27,7 +27,10 @@
 Route::get('/', 'Auth\AuthController@getLogin');
 
 
-
+Route::get('user/login', 'Front\LoginController@index');
+Route::get('user/signup', 'Front\SignupController@index');
+Route::post('signup', 'Front\SignupController@registration');
+Route::post('login', 'Front\LoginController@login');
 
 
 Route::get('home', 'HomeController@index');
@@ -265,10 +268,10 @@ Route::get('content/{id}/edit','ContentsController@edit');
 
 Route::patch('content/{id}/update','ContentsController@update');
 
-Route::get('login', 'FrontloginController@index');
-Route::get('signup', 'FrontloginController@signup');
+//Route::get('login', 'FrontloginController@index');
+//Route::get('signup', 'FrontloginController@signup');
 Route::get('forgot_password', 'FrontloginController@forgot_password');
-Route::post('login', 'FrontloginController@registration');
+//Route::post('login', 'FrontloginController@registration');
 
 
 Route::get('customer', 'CustomersController@index');
