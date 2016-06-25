@@ -41,6 +41,7 @@ class LoginController extends Controller {
             if (empty($user)) {
                 return false;
             } else {
+                session(['user_email' => $email]);
                 return true;
             }
         });
@@ -57,22 +58,10 @@ class LoginController extends Controller {
             return redirect('user/login')
                             ->withErrors($validator)
                             ->withInput();
-        }
-        echo "final_here";
-    }
-
-    public function somethingElseIsInvalid($email, $password) {
-        $email = $email;
-        $password = md5($password);
-        $user = DB::table('users')
-                ->where('email', $email)
-                ->where('password', $password)
-                ->select('*')
-                ->first();
-        if (empty($user)) {
-            return true;
         } else {
-            return false;
+            $request->session()->forget('email');
+            $request->session()->forget('password');
+            return redirect('user/myaccount');
         }
     }
 

@@ -28,7 +28,9 @@ Route::get('/', 'Auth\AuthController@getLogin');
 
 
 Route::get('user/login', 'Front\LoginController@index');
+Route::get('user/logout', 'Front\UserController@logout');
 Route::get('user/signup', 'Front\SignupController@index');
+Route::get('user/myaccount', 'Front\UserController@index');
 Route::post('signup', 'Front\SignupController@registration');
 Route::post('login', 'Front\LoginController@login');
 

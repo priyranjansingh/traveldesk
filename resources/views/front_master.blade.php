@@ -48,21 +48,23 @@
           </li>
           <li> <a href="#">My Account <i class="fa fa-angle-down"></i></a> 
           	<ul class="t_sub t_menu acc_drop">
+                <?php if(!session('user_email')){  ?>    
             	<li>
                 	<div class="clear padm">
-                        <a href="#" class="fl btn_small bg_yellow fc_black">Login</a>
-                        <a href="#" class="fr btn_small bg_black fc_white">Signup</a>
-                	<!--<a href="{{url('login')}}" class="fl btn_small bg_yellow fc_black">Login</a>
-                    <a href="{{url('signup')}}" class="fr btn_small bg_black fc_white">Signup</a>-->
+                        <a href="{{url('user/login')}}" class="fl btn_small bg_yellow fc_black">Login</a>
+                        <a href="{{url('user/signup')}}" class="fr btn_small bg_black fc_white">Signup</a>
                     </div>
                 </li>
                 <li>
             	<div class="padm"><a href="#" class="tac btn_small bg_blue fc_white db"><i class="fa fa-facebook"></i> Login</a></div>
                 </li>
+                <?php }else{   ?>
                 <li><a href="#">My Bookings</a></li>
                 <li><a href="#">Cancel Bookings</a></li>
                 <li><a href="#">Re-schedule Bookings</a></li>
                 <li><a href="#">Print E-tickets</a></li>
+                 <li><a href="{{url('user/logout')}}">Logout</a></li>
+                <?php  } ?>
             </ul>
           
           </li>
