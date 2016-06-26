@@ -1,0 +1,5 @@
+/* 26-6-2016  */
+
+ALTER TABLE `users` ADD `facebook_id` TEXT NULL AFTER `email`;
+ALTER TABLE `users` ADD `avatar` TEXT NULL AFTER `facebook_id`;
+ALTER TABLE `users` ADD `google_id` TEXT NOT NULL AFTER `facebook_id`;

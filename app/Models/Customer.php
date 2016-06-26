@@ -3,6 +3,8 @@
 use Illuminate\Database\Eloquent\Model;
 
 class Customer extends Model {
+    
+    protected $table = 'users';
 
     protected $fillable = [
         'fname',
@@ -10,7 +12,11 @@ class Customer extends Model {
         'phone',
         'password',
         'type',
-        'email'        
+        'email',
+        'name',
+        'facebook_id',
+        'google_id',
+        'avatar'
     ];
    
 

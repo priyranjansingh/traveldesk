@@ -7,3 +7,12 @@ function pre($data, $exit = false) {
         exit;
     }
 }
+
+function isLoggedIn() {
+    $user_email = session('user_email');
+    if (!empty($user_email)) {
+        return true;
+    } else {
+        return false;
+    }
+}

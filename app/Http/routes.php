@@ -31,8 +31,14 @@ Route::get('user/login', 'Front\LoginController@index');
 Route::get('user/logout', 'Front\UserController@logout');
 Route::get('user/signup', 'Front\SignupController@index');
 Route::get('user/myaccount', 'Front\UserController@index');
+//Route::get('user/myaccount',array('as' => 'myaccount','middleware'=>'frontauth','uses' => 'Front\UserController@index'));
 Route::post('signup', 'Front\SignupController@registration');
 Route::post('login', 'Front\LoginController@login');
+
+Route::get('user/facebook', 'Front\UserController@redirectToProvider');
+Route::get('user/facebook/callback', 'Front\UserController@handleProviderCallback');
+Route::get('user/google', 'Front\UserController@redirectToGoogleProvider');
+Route::get('user/google/callback', 'Front\UserController@handleProviderGoogleCallback');
 
 
 Route::get('home', 'HomeController@index');

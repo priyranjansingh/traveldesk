@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
 <head>
+<?php session_start();  ?>    
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="_token" content="{!! csrf_token() !!}"/>
@@ -46,7 +47,7 @@
           <li><a href="#"><i class="fa fa-cc-visa"></i> Save Big!! <i class="fa fa-info-circle"></i> </a>
           <div class="t_sub t_menu info-content pad15">Select Visa card holders can check their eligibility and unlock exclusive deals. <small class="visa-applicable-txt">* Applicable for flights &amp; hotels</small></div>
           </li>
-          <li> <a href="#">My Account <i class="fa fa-angle-down"></i></a> 
+          <li> <a href="#">My Account <?php //echo $_SESSION['FULLNAME'];  ?> <i class="fa fa-angle-down"></i></a> 
           	<ul class="t_sub t_menu acc_drop">
                 <?php if(!session('user_email')){  ?>    
             	<li>
@@ -56,7 +57,10 @@
                     </div>
                 </li>
                 <li>
-            	<div class="padm"><a href="#" class="tac btn_small bg_blue fc_white db"><i class="fa fa-facebook"></i> Login</a></div>
+            	<div class="padm"><a href="{{url('user/facebook')}}" class="tac btn_small bg_blue fc_white db"><i class="fa fa-facebook"></i> Login</a></div>
+                </li>
+                <li>
+            	<div class="padm"><a href="{{url('user/google')}}" class="tac btn_small bg_yellow fc_white db"><i class="fa fa-google"></i> Login</a></div>
                 </li>
                 <?php }else{   ?>
                 <li><a href="#">My Bookings</a></li>

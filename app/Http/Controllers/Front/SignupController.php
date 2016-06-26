@@ -40,7 +40,7 @@ class SignupController extends Controller {
                 'password' => md5($input['password']),
 	        'type' => 1
                 ));
-        return redirect('login');
+        return redirect('user/login');
         
     }
 
